@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.tyrion.plugin.location" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>LocationInfo</name>
+	<preference name="APP_KEY" />
+	<js-module name="LocationInfo" src="www/LocationInfo.js">
+		<clobbers target="cordova.plugins.LocationInfo" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="LocationInfo">
+				<param name="android-package" value="com.tyrion.plugin.location.LocationInfo" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml" />
+		<source-file src="src/android/LocationInfo.java" target-dir="src/com/tyrion/plugin/location" />
+	</platform>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="LocationInfo">
+				<param name="ios-package" value="LocationInfo" />
+			</feature>
+		</config-file>
+		<source-file src="src/ios/LocationInfo.m" />
+	</platform>
+</plugin>
