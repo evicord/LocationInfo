@@ -11,8 +11,28 @@
 				<param name="android-package" value="com.tyrion.plugin.location.LocationInfo" />
 			</feature>
 		</config-file>
-		<config-file parent="/*" target="AndroidManifest.xml" />
+
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+		    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+		    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+		    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+		    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+		    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+		    <uses-permission android:name="android.permission.WAKE_LOCK" />
+		    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data android:name="com.amap.api.v2.apikey" android:value="$APP_KEY" />
+            <service android:name="com.amap.api.location.APSService"></service>
+        </config-file>
+		
 		<source-file src="src/android/LocationInfo.java" target-dir="src/com/tyrion/plugin/location" />
+		<source-file src="src/android/AMap_Location_V2.2.0_20151222.jar" target-dir="libs" />
 	</platform>
 	<platform name="ios">
 		<config-file parent="/*" target="config.xml">
