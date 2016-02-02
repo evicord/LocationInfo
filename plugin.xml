@@ -43,11 +43,6 @@
         <header-file src="src/ios/LocationInfo.h"/>
         <source-file src="src/ios/LocationInfo.m"/>
         
-        <config-file target="*LocationInfo.plist" parent="params">
-            <dict>
-                <key>APP_KEY</key>
-                <string>$APP_KEY</string>
-            </dict>
-        </config-file>
+        
 	</platform>
 </plugin>
