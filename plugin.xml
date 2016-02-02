@@ -43,6 +43,8 @@
         <header-file src="src/ios/LocationInfo.h"/>
         <source-file src="src/ios/LocationInfo.m"/>
         
-        
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+            <string>请点击允许，以便泛艺术帮您定位您的位置</string>
+        </config-file>
 	</platform>
 </plugin>
