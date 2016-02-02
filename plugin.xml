@@ -40,6 +40,7 @@
 				<param name="ios-package" value="LocationInfo" />
 			</feature>
 		</config-file>
-		<source-file src="src/ios/LocationInfo.m" />
+        <header-file src="src/ios/LocationInfo.h"/>
+        <source-file src="src/ios/LocationInfo.m"/>
 	</platform>
 </plugin>
